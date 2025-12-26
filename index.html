@@ -1,108 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tianjin Misiona Technology | Creative Puzzle Games</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .game-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
-        .hero-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Misiona Tech | Tianjin Misiona Technology Co., Ltd.</title>
+  <meta name="description" content="Misiona Tech is a mobile game studio operated by Tianjin Misiona Technology Co., Ltd., focusing on puzzle and casual games." />
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+    header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin: 0 0 12px;
+    }
+    header p {
+      font-size: 18px;
+      margin: 6px 0;
+      opacity: 0.95;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .section-desc {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .card p {
+      color: #555;
+      line-height: 1.5;
+    }
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+    footer strong {
+      color: #fff;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
-        <div class="text-2xl font-bold text-indigo-600">Misiona Tech</div>
-        <div class="space-x-8 hidden md:flex font-medium">
-            <a href="#games" class="hover:text-indigo-600">Games</a>
-            <a href="#about" class="hover:text-indigo-600">About Us</a>
-            <a href="#contact" class="hover:text-indigo-600">Contact</a>
-        </div>
-    </nav>
+<header>
+  <h1>Misiona Tech</h1>
+  <p>We create puzzle games that challenge and relax the mind.</p>
+  <p><strong>Operated by Tianjin Misiona Technology Co., Ltd.</strong></p>
+</header>
 
-    <!-- Hero Section -->
-    <header class="hero-bg text-white py-20 px-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">We Create Puzzles That Challenge Your Mind</h1>
-        <p class="text-xl opacity-90 mb-8">Specializing in innovative and relaxing puzzle mobile games.</p>
-        <a href="#games" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100">View Our Games</a>
-    </header>
+<section class="container">
+  <h2 class="section-title">Our Games</h2>
+  <p class="section-desc">
+    Misiona Tech focuses on designing high-quality mobile puzzle and casual games.
+    Our titles emphasize intuitive mechanics, clean visuals, and long-term player engagement.
+  </p>
 
-    <!-- Games Section -->
-    <section id="games" class="max-w-6xl mx-auto py-20 px-8">
-        <h2 class="text-3xl font-bold mb-12 text-center">Our Featured Games</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            
-            <!-- Game Item 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg game-card">
-                <img src="https://via.placeholder.com/400x300?text=Puzzle+Game+1" alt="Game 1" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Block Master</h3>
-                    <p class="text-gray-600 mb-4">A minimalist block-matching puzzle for relaxing moments.</p>
-                    <div class="flex space-x-4">
-                        <i class="fab fa-apple text-2xl"></i>
-                        <i class="fab fa-google-play text-2xl"></i>
-                    </div>
-                </div>
-            </div>
+  <div class="games">
+    <div class="card">
+      <h3>Block Master</h3>
+      <p>A minimalist block-matching puzzle game designed for relaxing and focused gameplay.</p>
+    </div>
+    <div class="card">
+      <h3>Logic Flow</h3>
+      <p>A logic-based puzzle experience that challenges players with progressively complex levels.</p>
+    </div>
+    <div class="card">
+      <h3>Color Sort 3D</h3>
+      <p>A visually satisfying color-sorting puzzle game suitable for players of all ages.</p>
+    </div>
+  </div>
+</section>
 
-            <!-- Game Item 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg game-card">
-                <img src="https://via.placeholder.com/400x300?text=Puzzle+Game+2" alt="Game 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Logic Flow</h3>
-                    <p class="text-gray-600 mb-4">Challenge your IQ with complex logic flow puzzles.</p>
-                    <div class="flex space-x-4">
-                        <i class="fab fa-apple text-2xl"></i>
-                        <i class="fab fa-google-play text-2xl"></i>
-                    </div>
-                </div>
-            </div>
+<section class="container">
+  <h2 class="section-title">About the Company</h2>
+  <p class="section-desc">
+    <strong>Tianjin Misiona Technology Co., Ltd.</strong> is a mobile game development company based in Tianjin, China.
+    We specialize in the creation and global distribution of casual and puzzle games for international markets.
+    Our mission is to deliver enjoyable, accessible, and thoughtfully designed gaming experiences.
+  </p>
+</section>
 
-            <!-- Game Item 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg game-card">
-                <img src="https://via.placeholder.com/400x300?text=Puzzle+Game+3" alt="Game 3" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Color Sort 3D</h3>
-                    <p class="text-gray-600 mb-4">Viral ASMR sorting puzzle game for everyone.</p>
-                    <div class="flex space-x-4">
-                        <i class="fab fa-apple text-2xl"></i>
-                        <i class="fab fa-google-play text-2xl"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="bg-white py-20 px-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">About Tianjin Misiona Technology</h2>
-            <p class="text-lg text-gray-700 leading-relaxed">
-                Founded in Tianjin, Misiona Technology is a passionate studio dedicated to the art of puzzle games. 
-                We believe that simple mechanics can create the most profound experiences. 
-                Our team blends creativity and data-driven design to build games that millions of players enjoy globally.
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-12 px-8">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0">
-                <p class="text-xl font-bold">Tianjin Misiona Technology Co., Ltd.</p>
-                <p class="text-gray-400 mt-2">© 2025 Misiona Tech. All rights reserved.</p>
-            </div>
-            <div class="flex space-x-6 text-2xl">
-                <a href="#" class="hover:text-indigo-400"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-indigo-400"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:contact@misiona.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
+<footer>
+  <p><strong>Tianjin Misiona Technology Co., Ltd.</strong></p>
+  <p>© 2025 Misiona Tech. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
