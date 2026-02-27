@@ -1,124 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Misiona Tech | Tianjin Misiona Technology Co., Ltd.</title>
-  <meta name="description" content="Misiona Tech is a mobile game studio operated by Tianjin Misiona Technology Co., Ltd., focusing on puzzle and casual games." />
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #ffffff;
-      color: #111;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tianjin Misiona Technology Co., Ltd.</title>
+
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --primary: #6366f1;
+    --border: #334155;
+}
+
+.light {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --primary: #4f46e5;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+button.toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 30px;
     }
-    header {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      padding: 80px 20px 60px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 42px;
-      margin: 0 0 12px;
-    }
-    header p {
-      font-size: 18px;
-      margin: 6px 0;
-      opacity: 0.95;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    .section-desc {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 40px;
-      color: #444;
-      line-height: 1.6;
-    }
-    .games {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-    .card h3 {
-      margin-top: 0;
-      font-size: 20px;
-    }
-    .card p {
-      color: #555;
-      line-height: 1.5;
-    }
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 14px;
-    }
-    footer strong {
-      color: #fff;
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Misiona Tech</h1>
-  <p>We create puzzle games that challenge and relax the mind.</p>
-  <p><strong>Operated by Tianjin Misiona Technology Co., Ltd.</strong></p>
+<div class="container">
+<nav>
+<div><strong>Misiona</strong></div>
+<ul>
+<li><a href="#games">Games</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="toggle" onclick="toggleMode()">Toggle Mode</button>
+</nav>
+</div>
 </header>
 
-<section class="container">
-  <h2 class="section-title">Our Games</h2>
-  <p class="section-desc">
-    Misiona Tech focuses on designing high-quality mobile puzzle and casual games.
-    Our titles emphasize intuitive mechanics, clean visuals, and long-term player engagement.
-  </p>
-
-  <div class="games">
-    <div class="card">
-      <h3>Block Master</h3>
-      <p>A minimalist block-matching puzzle game designed for relaxing and focused gameplay.</p>
-    </div>
-    <div class="card">
-      <h3>Logic Flow</h3>
-      <p>A logic-based puzzle experience that challenges players with progressively complex levels.</p>
-    </div>
-    <div class="card">
-      <h3>Color Sort 3D</h3>
-      <p>A visually satisfying color-sorting puzzle game suitable for players of all ages.</p>
-    </div>
-  </div>
+<section class="hero">
+<div class="container">
+<h1>Crafting Engaging Puzzle Experiences</h1>
+<p>We design simple, elegant and addictive mobile puzzle games for players worldwide.</p>
+<a href="#games" class="btn">View Games</a>
+<a href="#contact" class="btn">Get in Touch</a>
+</div>
 </section>
 
-<section class="container">
-  <h2 class="section-title">About the Company</h2>
-  <p class="section-desc">
-    <strong>Tianjin Misiona Technology Co., Ltd.</strong> is a mobile game development company based in Tianjin, China.
-    We specialize in the creation and global distribution of casual and puzzle games for international markets.
-    Our mission is to deliver enjoyable, accessible, and thoughtfully designed gaming experiences.
-  </p>
+<section id="games" class="section">
+<div class="container">
+<h2>Our Games</h2>
+<div class="games">
+
+<div class="card">
+<h3>Solitaire Classic</h3>
+<p>A timeless card experience designed for relaxing daily gameplay.</p>
+<a href="#" class="btn">Google Play</a>
+</div>
+
+<div class="card">
+<h3>Water Sort Puzzle</h3>
+<p>Test your logic and strategy in colorful sorting challenges.</p>
+<a href="#" class="btn">Google Play</a>
+</div>
+
+<div class="card">
+<h3>Bubble Shooter 2026</h3>
+<p>A modern twist on the classic bubble popping arcade fun.</p>
+<a href="#" class="btn">Google Play</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="about" class="section">
+<div class="container">
+<h2>About Us</h2>
+<p style="text-align:center; max-width:700px; margin:auto; color:var(--muted);">
+Tianjin Misiona Technology Co., Ltd. is an independent mobile game studio focused on puzzle and casual experiences.
+We combine thoughtful design with continuous iteration to deliver games players love to return to every day.
+</p>
+</div>
+</section>
+
+<section id="contact" class="section contact">
+<div class="container">
+<h2>Contact</h2>
+<p>Email: support@misionapuzzle.com</p>
+<p>Business Inquiries: support@misionapuzzle.com</p>
+</div>
 </section>
 
 <footer>
-  <p><strong>Tianjin Misiona Technology Co., Ltd.</strong></p>
-  <p>© 2025 Misiona Tech. All rights reserved.</p>
+<div class="container">
+<p>© 2026 Tianjin Misiona Technology Co., Ltd. All rights reserved.</p>
+</div>
 </footer>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+</script>
 
 </body>
 </html>
