@@ -531,3 +531,7 @@ pubnative.net, 1017792, RESELLER, d641df8625486a7b
 smartclip.net, 13564, RESELLER
 zmaticoo.com,5135302,RESELLER
 zoomd.com,88478941,RESELLER
+
+pangle
+pangleglobal.com, Account ID, DIRECT
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
