@@ -1,260 +1,494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tianjin Misiona Technology Co., Ltd.</title>
-
-<style>
-:root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --primary: #6366f1;
-    --border: #334155;
-}
-
-.light {
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #0f172a;
-    --muted: #475569;
-    --primary: #4f46e5;
-    --border: #e2e8f0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    transition: 0.3s ease;
-}
-
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-}
-
-header {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: var(--primary);
-}
-
-button.toggle {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.hero {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    color: var(--muted);
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    margin: 5px;
-}
-
-.section {
-    padding: 80px 0;
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 28px;
-}
-
-.games {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    font-size: 14px;
-    color: var(--muted);
-}
-
-footer a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.contact {
-    text-align: center;
-}
-
-.contact p {
-    margin-bottom: 10px;
-}
-
-@media(max-width:768px){
-    .hero h1 {
-        font-size: 30px;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c2d">
+  <meta name="description" content="Misiona creates thoughtful, beautifully crafted mobile games. Discover My Solitaire, a calm classic card game with fresh twists.">
+  <meta property="og:title" content="Misiona — Games made for a quieter moment">
+  <meta property="og:description" content="Classic play, thoughtful details. Meet My Solitaire for Android.">
+  <meta property="og:image" content="https://www.misionapuzzle.com/assets/app-icon.webp">
+  <title>Misiona — Thoughtful mobile games</title>
+  <link rel="icon" href="assets/app-icon.webp">
+  <style>
+    :root {
+      --ink: #183128;
+      --green: #123c2d;
+      --green-2: #1c5842;
+      --paper: #f4efdf;
+      --paper-2: #e9e0c9;
+      --cream: #fffaf0;
+      --red: #b83d38;
+      --gold: #d8b260;
+      --line: rgba(24, 49, 40, .18);
+      --shadow: 0 24px 70px rgba(24, 49, 40, .16);
     }
-}
-</style>
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 8%, rgba(216,178,96,.18), transparent 27rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 16px;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      inset: 0 0 auto;
+      padding: 24px 0;
+      color: var(--cream);
+    }
+
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.28rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,250,240,.5);
+      border-radius: 10px;
+      color: var(--gold);
+      transform: rotate(6deg);
+    }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { font-size: .9rem; font-weight: 700; text-decoration: none; }
+    .nav-links a:not(.nav-cta) { opacity: .78; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { padding: 11px 17px; border: 1px solid rgba(255,250,240,.45); border-radius: 999px; }
+
+    .hero {
+      position: relative;
+      min-height: 840px;
+      display: grid;
+      align-items: center;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 79% 37%, rgba(76,146,107,.45), transparent 30rem),
+        linear-gradient(125deg, #0b2b20, var(--green) 62%, #174b37);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .14;
+      background-image: repeating-linear-gradient(115deg, transparent 0 24px, rgba(255,255,255,.08) 25px 26px);
+      mask-image: linear-gradient(to right, #000, transparent 68%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
+      align-items: center;
+      gap: 60px;
+      padding: 150px 0 100px;
+    }
+    .hero-copy { max-width: 650px; }
+    .hero .eyebrow { color: #b9d0c2; }
+    h1, h2, .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -.045em;
+    }
+    h1 { margin: 0; font-size: clamp(3.4rem, 7vw, 6.9rem); line-height: .95; }
+    .hero h1 em { color: var(--gold); font-weight: inherit; }
+    .hero-lede { max-width: 560px; margin: 30px 0 34px; color: #c9d7cf; font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: .93rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--green); background: var(--cream); }
+    .button-secondary { color: var(--cream); border: 1px solid rgba(255,250,240,.35); }
+    .play-icon { width: 20px; height: 20px; }
+
+    .hero-visual { position: relative; min-height: 610px; }
+    .app-icon {
+      position: absolute;
+      z-index: 3;
+      top: 70px;
+      right: 0;
+      width: 124px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 29px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.26);
+      transform: rotate(7deg);
+    }
+    .phone {
+      position: absolute;
+      z-index: 2;
+      width: 322px;
+      right: 74px;
+      top: 25px;
+      padding: 9px;
+      border: 2px solid rgba(255,255,255,.5);
+      border-radius: 42px;
+      background: #0a1d16;
+      box-shadow: 0 38px 90px rgba(0,0,0,.36);
+      transform: rotate(3deg);
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      z-index: 4;
+      width: 32%;
+      height: 20px;
+      top: 9px;
+      left: 34%;
+      border-radius: 0 0 14px 14px;
+      background: #0a1d16;
+    }
+    .phone img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 32px; }
+    .playing-card {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 138px;
+      height: 190px;
+      padding: 16px;
+      border-radius: 15px;
+      color: #171914;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .playing-card span:last-child { align-self: flex-end; transform: rotate(180deg); }
+    .card-one { z-index: 1; left: 10px; bottom: 40px; transform: rotate(-14deg); }
+    .card-two { z-index: 3; right: -34px; bottom: 60px; color: var(--red); transform: rotate(12deg); }
+
+    .trust-bar {
+      position: relative;
+      z-index: 3;
+      margin-top: -38px;
+    }
+    .trust-inner {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .trust-item { min-height: 112px; display: flex; flex-direction: column; justify-content: center; padding: 22px 30px; }
+    .trust-item + .trust-item { border-left: 1px solid var(--line); }
+    .trust-item strong { font-family: Georgia, serif; font-size: 1.55rem; font-weight: 500; }
+    .trust-item span { color: #5c6d65; font-size: .82rem; }
+
+    section { padding: 120px 0; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 64px; }
+    h2 { max-width: 750px; margin: 0; font-size: clamp(2.6rem, 5vw, 5rem); line-height: 1.02; }
+    .section-heading p { max-width: 390px; margin: 0 0 7px; color: #5c6d65; }
+
+    .feature-layout { display: grid; grid-template-columns: 1.06fr .94fr; gap: 26px; }
+    .feature-lead {
+      position: relative;
+      min-height: 620px;
+      padding: 54px;
+      border-radius: 28px;
+      color: var(--cream);
+      background: var(--red);
+      overflow: hidden;
+    }
+    .feature-lead h3 { max-width: 470px; margin: 0; font: 500 clamp(2.4rem, 4vw, 4.5rem)/1 Georgia, serif; letter-spacing: -.04em; }
+    .feature-lead p { max-width: 420px; color: #f2d8d0; }
+    .joker-art { position: absolute; right: -85px; bottom: -90px; width: 70%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; filter: drop-shadow(0 25px 25px rgba(71,19,16,.35)); transform: rotate(7deg); }
+    .feature-stack { display: grid; gap: 26px; }
+    .feature-card { min-height: 297px; padding: 42px; border: 1px solid var(--line); border-radius: 28px; background: rgba(255,250,240,.54); }
+    .feature-card:nth-child(2) { color: var(--cream); background: var(--green); }
+    .feature-card .number { display: block; margin-bottom: 52px; color: var(--red); font: italic 1.1rem Georgia, serif; }
+    .feature-card:nth-child(2) .number { color: var(--gold); }
+    .feature-card h3 { margin: 0 0 12px; font: 500 2rem Georgia, serif; }
+    .feature-card p { max-width: 470px; margin: 0; opacity: .72; }
+
+    .gallery { padding-top: 30px; background: var(--cream); }
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    .screen { position: relative; }
+    .screen:nth-child(even) { margin-top: 56px; }
+    .screen img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 24px; box-shadow: 0 24px 55px rgba(24,49,40,.18); }
+    .screen figcaption { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; font-size: .82rem; font-weight: 800; }
+    .screen figcaption span { color: #7a887f; font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+
+    .about { position: relative; color: var(--cream); background: var(--green); overflow: hidden; }
+    .about::after {
+      content: "M";
+      position: absolute;
+      right: -4vw;
+      bottom: -15vw;
+      color: rgba(255,255,255,.035);
+      font: 700 45vw Georgia, serif;
+      line-height: 1;
+    }
+    .about-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; }
+    .about .eyebrow { color: var(--gold); }
+    .about-copy { max-width: 760px; }
+    .about-copy h2 { margin-bottom: 34px; }
+    .about-copy p { max-width: 630px; color: #c7d5cd; font-size: 1.08rem; }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 60px; border: 1px solid rgba(255,255,255,.15); }
+    .value { padding: 28px; border-right: 1px solid rgba(255,255,255,.15); }
+    .value:last-child { border: 0; }
+    .value strong { display: block; margin-bottom: 6px; color: var(--gold); font-family: Georgia, serif; font-size: 1.2rem; }
+    .value span { color: #b9cac0; font-size: .83rem; }
+
+    .cta { text-align: center; }
+    .cta-box {
+      position: relative;
+      padding: 90px 30px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255,250,240,.56);
+      overflow: hidden;
+    }
+    .cta-box::before, .cta-box::after { position: absolute; font: 8rem Georgia, serif; opacity: .09; }
+    .cta-box::before { content: "♠"; left: 8%; top: 10%; }
+    .cta-box::after { content: "♥"; right: 8%; bottom: 3%; color: var(--red); }
+    .cta h2 { max-width: 780px; margin-inline: auto; }
+    .cta p { margin: 22px auto 30px; color: #5c6d65; }
+    .cta .button-primary { color: var(--cream); background: var(--green); }
+
+    footer { padding: 42px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    footer .brand { font-size: 1rem; }
+    footer .brand-mark { width: 30px; border-color: var(--line); }
+    .footer-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 22px; color: #65756d; font-size: .8rem; }
+    .footer-meta a { text-decoration: none; }
+    .footer-meta a:hover { color: var(--red); }
+
+    @media (max-width: 960px) {
+      .hero { min-height: 1050px; }
+      .hero-inner { grid-template-columns: 1fr; padding-top: 150px; }
+      .hero-copy { max-width: 720px; }
+      .hero-visual { width: min(540px, 100%); margin-inline: auto; }
+      .trust-inner { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .trust-item:nth-child(4) { border-top: 1px solid var(--line); }
+      .feature-layout, .about-grid { grid-template-columns: 1fr; }
+      .screens { grid-template-columns: 1fr 1fr; }
+      .about-grid { gap: 36px; }
+    }
+
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .site-header { padding-top: 18px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 9px 13px; font-size: .78rem !important; }
+      .hero { min-height: 980px; }
+      .hero-inner { gap: 20px; padding: 128px 0 70px; }
+      h1 { font-size: clamp(3.25rem, 17vw, 5rem); }
+      .hero-lede { margin-top: 22px; font-size: 1rem; }
+      .hero-visual { min-height: 500px; transform: scale(.84); transform-origin: top center; }
+      .phone { right: 50%; transform: translateX(50%) rotate(3deg); width: 292px; }
+      .app-icon { right: 0; width: 96px; }
+      .card-one { left: -10px; }
+      .card-two { right: -10px; }
+      .trust-bar { margin-top: -22px; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .trust-item { min-height: 90px; padding: 18px 22px; }
+      .trust-item + .trust-item { border-left: 0; border-top: 1px solid var(--line); }
+      section { padding: 82px 0; }
+      .section-heading { display: block; margin-bottom: 40px; }
+      .section-heading p { margin-top: 20px; }
+      .feature-lead { min-height: 510px; padding: 34px; }
+      .joker-art { width: 92%; }
+      .feature-card { min-height: auto; padding: 32px; }
+      .feature-card .number { margin-bottom: 28px; }
+      .screens { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .screen:nth-child(even) { margin-top: 32px; }
+      .screen img { border-radius: 15px; }
+      .screen figcaption { display: none; }
+      .values { grid-template-columns: 1fr; }
+      .value { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-meta { justify-content: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Misiona home">
+        <span class="brand-mark" aria-hidden="true">♦</span>
+        <span>Misiona</span>
+      </a>
+      <div class="nav-links">
+        <a href="#game">The game</a>
+        <a href="#studio">Our studio</a>
+        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">Play on Android ↗</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
-<div class="container">
-<nav>
-<div><strong>Misiona</strong></div>
-<ul>
-<li><a href="#games">Games</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<button class="toggle" onclick="toggleMode()">Toggle Mode</button>
-</nav>
-</div>
-</header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">A mobile game studio from Tianjin</p>
+          <h1 id="hero-title">Games made for a <em>quieter</em> moment.</h1>
+          <p class="hero-lede">We make familiar games feel fresh, warm and wonderfully easy to return to. Meet My Solitaire—classic cards, thoughtful twists, no learning curve.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">
+              <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20.5v-17c0-.6.3-1.1.8-1.4L14.9 12 3.8 21.9c-.5-.3-.8-.8-.8-1.4Zm13-7.5 2.7 2.4-3.5 2-3.1-2.8L16 13Zm3.8-3.4c.8.4.8 1.5 0 2l-2.6 1.5-2.9-2.6 3.2-2.9 2.3 2ZM15.2 6.7 12.1 9.5 3.8 2.1c.4-.2.9-.2 1.3 0l10.1 4.6Z"/></svg>
+              Get it on Google Play
+            </a>
+            <a class="button button-secondary" href="#game">See what’s inside</a>
+          </div>
+        </div>
 
-<section class="hero">
-<div class="container">
-<h1>Crafting Engaging Puzzle Experiences</h1>
-<p>We design simple, elegant and addictive mobile puzzle games for players worldwide.</p>
-<a href="#games" class="btn">View Games</a>
-<a href="#contact" class="btn">Get in Touch</a>
-</div>
-</section>
+        <div class="hero-visual" aria-label="My Solitaire game preview">
+          <div class="playing-card card-one" aria-hidden="true"><span>A<br>♠</span><span>A<br>♠</span></div>
+          <div class="phone"><img src="assets/screen-classic.webp" alt="My Solitaire classic game board" width="900" height="1600"></div>
+          <img class="app-icon" src="assets/app-icon.webp" alt="My Solitaire app icon" width="512" height="512">
+          <div class="playing-card card-two" aria-hidden="true"><span>Q<br>♥</span><span>Q<br>♥</span></div>
+        </div>
+      </div>
+    </section>
 
-<section id="games" class="section">
-<div class="container">
-<h2>Our Games</h2>
-<div class="games">
+    <div class="trust-bar wrap" aria-label="Game highlights">
+      <div class="trust-inner">
+        <div class="trust-item"><strong>My Solitaire</strong><span>Our newest card game</span></div>
+        <div class="trust-item"><strong>Daily play</strong><span>A fresh challenge every day</span></div>
+        <div class="trust-item"><strong>Made yours</strong><span>Cards, tables and themes</span></div>
+        <div class="trust-item"><strong>Free</strong><span>Available now on Android</span></div>
+      </div>
+    </div>
 
-<div class="card">
-<h3>Solitaire Classic</h3>
-<p>A timeless card experience designed for relaxing daily gameplay.</p>
-<a href="#" class="btn">Google Play</a>
-</div>
+    <section id="game">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Classic at heart. Fresh in hand.</p>
+            <h2>Solitaire, with a little more possibility.</h2>
+          </div>
+          <p>The game you already know, made friendlier with satisfying controls, useful tools and a playful Joker twist.</p>
+        </div>
 
-<div class="card">
-<h3>Aqua Sort Puzzle - Love Water</h3>
-<p>Test your logic and strategy in colorful sorting challenges.</p>
-<a href="#" class="btn">Google Play</a>
-</div>
+        <div class="feature-layout">
+          <article class="feature-lead">
+            <p class="eyebrow">The signature twist</p>
+            <h3>A Joker when you need another way forward.</h3>
+            <p>Open up new moves when a deal gets tricky and keep the game flowing without losing the classic challenge.</p>
+            <img class="joker-art" src="assets/screen-joker.webp" alt="Joker moves in My Solitaire" width="900" height="1600" loading="lazy">
+          </article>
+          <div class="feature-stack">
+            <article class="feature-card">
+              <span class="number">01 / Make it yours</span>
+              <h3>Your table, your cards.</h3>
+              <p>Switch backgrounds, card backs and collectible card faces until every hand feels like your own.</p>
+            </article>
+            <article class="feature-card">
+              <span class="number">02 / Keep it moving</span>
+              <h3>Hints when helpful. Undo when needed.</h3>
+              <p>Clear controls and gentle tools make every session relaxing—whether you play for two minutes or twenty.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Bubble Shooter 2026</h3>
-<p>A modern twist on the classic bubble popping arcade fun.</p>
-<a href="#" class="btn">Google Play</a>
-</div>
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Inside the game</p>
+            <h2 id="gallery-title">A familiar ritual, beautifully refined.</h2>
+          </div>
+        </div>
+        <div class="screens">
+          <figure class="screen"><img src="assets/screen-classic.webp" alt="Classic Solitaire game board" width="900" height="1600"><figcaption>Classic play <span>01</span></figcaption></figure>
+          <figure class="screen"><img src="assets/screen-joker.webp" alt="Joker move feature" width="900" height="1600"><figcaption>Joker moves <span>02</span></figcaption></figure>
+          <figure class="screen"><img src="assets/screen-hints.webp" alt="Hint and undo tools" width="900" height="1600"><figcaption>Helpful tools <span>03</span></figcaption></figure>
+          <figure class="screen"><img src="assets/screen-themes.webp" alt="Custom background themes" width="900" height="1600"><figcaption>Personal themes <span>04</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
 
-</div>
-</div>
-</section>
+    <section id="studio" class="about">
+      <div class="wrap about-grid">
+        <div><p class="eyebrow">Tianjin Misiona Technology Co., Ltd.</p></div>
+        <div class="about-copy">
+          <h2>Small studio.<br>Endless curiosity.</h2>
+          <p>Misiona is an independent mobile game studio focused on puzzle and casual experiences. We pair clear design with continuous iteration to make games people genuinely enjoy returning to.</p>
+          <div class="values">
+            <div class="value"><strong>Simple first</strong><span>Easy to understand, satisfying to master.</span></div>
+            <div class="value"><strong>Made with care</strong><span>Every detail earns its place.</span></div>
+            <div class="value"><strong>Always improving</strong><span>Built, listened to and refined.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="about" class="section">
-<div class="container">
-<h2>About Us</h2>
-<p style="text-align:center; max-width:700px; margin:auto; color:var(--muted);">
-Tianjin Misiona Technology Co., Ltd. is an independent mobile game studio focused on puzzle and casual experiences.
-We combine thoughtful design with continuous iteration to deliver games players love to return to every day.
-</p>
-</div>
-</section>
+    <section class="cta">
+      <div class="wrap cta-box">
+        <p class="eyebrow">One more hand?</p>
+        <h2>Your next quiet moment is ready.</h2>
+        <p>My Solitaire is free to play on Android.</p>
+        <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">Play My Solitaire ↗</a>
+      </div>
+    </section>
+  </main>
 
-<section id="contact" class="section contact">
-<div class="container">
-<h2>Contact</h2>
-<p>Email: support@misionapuzzle.com</p>
-</div>
-</section>
-
-<footer>
-<div class="container">
-<p>© 2026 Tianjin Misiona Technology Co., Ltd. All rights reserved.</p>
-<p>
-<a href="privacy.html">Privacy Policy</a>
-</p>
-</div>
-</footer>
-
-<script>
-function toggleMode() {
-    document.body.classList.toggle("light");
-}
-</script>
-
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">♦</span><span>Misiona</span></a>
+      <div class="footer-meta">
+        <span>© <span id="year">2026</span> Tianjin Misiona Technology Co., Ltd.</span>
+        <a href="mailto:support@misionapuzzle.com">support@misionapuzzle.com</a>
+        <a href="privacy.html">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
