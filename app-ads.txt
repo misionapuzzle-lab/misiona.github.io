@@ -1,6 +1,11 @@
 admob
 google.com, pub-2551259042440078, DIRECT, f08c47fec0942fa0
 
+pangle
+pangleglobal.com, Account ID, DIRECT
+
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
+
 liftoff
 zmaticoo.com,5135302,RESELLER
 zoomd.com,88478941,RESELLER
