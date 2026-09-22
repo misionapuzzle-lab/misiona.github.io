@@ -25,6 +25,7 @@ display.io,2499,RESELLER
 hyperaudience.com,312,RESELLER
 hyperaudience.com,313,RESELLER
 ignitemediatech.com,pub_11114,RESELLER
+indexexchange.com,219174,RESELLER,50b1c356f2c5c8fc
 lijit.com,567230,RESELLER,fafdf38b16bf6b2b
 lijit.com,569924,RESELLER,fafdf38b16bf6b2b
 mindtos.com,maca7398339177c05,RESELLER
@@ -32,6 +33,8 @@ opera.com,pub13954598314368,RESELLER,55a0c5fd61378de3
 pubeasy.io,110579,RESELLER
 pubmatic.com,168216,RESELLER,5d62403b186f2ace
 pubmatic.com,168244,RESELLER,5d62403b186f2ace
+pubmatic.com,168363,RESELLER,5d62403b186f2ace
+pubmatic.com,168367,RESELLER,5d62403b186f2ace
 risecodes.com,66fab6981efdb80001a3dadc,RESELLER,79929e88b2ba73bc
 rtbmax.com,68b8fb28c310663c8d21c90e,RESELLER
 silvermob.com,576,RESELLER
@@ -41,6 +44,7 @@ triplelift.com,14826,RESELLER,6c33edb13117fd86
 ushareit.com,LCc6b8b1c8aca38e6f,RESELLER
 verve.com,1007302,RESELLER,0c8f5958fc2d6282
 visiblemeasures.com,1090,RESELLER
+
 zmaticoo.com,5135302,RESELLER
 zoomd.com,88478941,RESELLER
 vungle.com,6a37a5d9e92d4e459e0dc282,DIRECT,c107d686becd2d77
