@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123c2d">
-  <meta name="description" content="Misiona creates thoughtful, beautifully crafted mobile games. Discover My Solitaire, a calm classic card game with fresh twists.">
+  <meta name="description" content="Misiona creates thoughtful, beautifully crafted mobile games. Discover our calm classic solitaire games on iOS and Android.">
   <meta property="og:title" content="Misiona — Games made for a quieter moment">
-  <meta property="og:description" content="Classic play, thoughtful details. Meet My Solitaire for Android.">
+  <meta property="og:description" content="Classic play, thoughtful details. Meet Misiona solitaire games on iOS and Android.">
   <meta property="og:image" content="https://www.misionapuzzle.com/assets/app-icon.webp">
   <title>Misiona — Thoughtful mobile games</title>
   <link rel="icon" href="assets/app-icon.webp">
@@ -138,7 +138,7 @@
     .button:hover { transform: translateY(-2px); }
     .button-primary { color: var(--green); background: var(--cream); }
     .button-secondary { color: var(--cream); border: 1px solid rgba(255,250,240,.35); }
-    .play-icon { width: 20px; height: 20px; }
+    .play-icon { width: 20px; height: 20px; flex: 0 0 auto; }
 
     .hero-visual { position: relative; min-height: 610px; }
     .app-icon {
@@ -221,6 +221,39 @@
     .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 64px; }
     h2 { max-width: 750px; margin: 0; font-size: clamp(2.6rem, 5vw, 5rem); line-height: 1.02; }
     .section-heading p { max-width: 390px; margin: 0 0 7px; color: #5c6d65; }
+
+    .products { padding-bottom: 0; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,250,240,.62);
+      box-shadow: 0 18px 48px rgba(24,49,40,.08);
+    }
+    .product-card img {
+      width: 92px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 14px 26px rgba(24,49,40,.14);
+    }
+    .product-card h3 { margin: 0 0 8px; font: 500 2rem Georgia, serif; letter-spacing: -.025em; }
+    .product-card p { margin: 0 0 18px; color: #5c6d65; }
+    .product-card .button { min-height: 46px; padding-inline: 18px; }
+    .product-card .button-secondary, .cta .button-secondary {
+      color: var(--green);
+      border-color: var(--line);
+      background: rgba(18,60,45,.04);
+    }
 
     .feature-layout { display: grid; grid-template-columns: 1.06fr .94fr; gap: 26px; }
     .feature-lead {
@@ -309,7 +342,7 @@
       .trust-inner { grid-template-columns: 1fr 1fr; }
       .trust-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
       .trust-item:nth-child(4) { border-top: 1px solid var(--line); }
-      .feature-layout, .about-grid { grid-template-columns: 1fr; }
+      .feature-layout, .about-grid, .product-grid { grid-template-columns: 1fr; }
       .screens { grid-template-columns: 1fr 1fr; }
       .about-grid { gap: 36px; }
     }
@@ -339,6 +372,10 @@
       .joker-art { width: 92%; }
       .feature-card { min-height: auto; padding: 32px; }
       .feature-card .number { margin-bottom: 28px; }
+      .product-card { grid-template-columns: 72px 1fr; gap: 18px; padding: 22px; }
+      .product-card img { width: 72px; border-radius: 18px; }
+      .product-card h3 { font-size: 1.55rem; }
+      .product-card .button { width: 100%; }
       .screens { grid-template-columns: 1fr 1fr; gap: 12px; }
       .screen:nth-child(even) { margin-top: 32px; }
       .screen img { border-radius: 15px; }
@@ -365,7 +402,7 @@
       <div class="nav-links">
         <a href="#game">The game</a>
         <a href="#studio">Our studio</a>
-        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">Play on Android ↗</a>
+        <a class="nav-cta" href="#download">Download ↗</a>
       </div>
     </nav>
   </header>
@@ -376,11 +413,15 @@
         <div class="hero-copy">
           <p class="eyebrow">A mobile game studio from Tianjin</p>
           <h1 id="hero-title">Games made for a <em>quieter</em> moment.</h1>
-          <p class="hero-lede">We make familiar games feel fresh, warm and wonderfully easy to return to. Meet My Solitaire—classic cards, thoughtful twists, no learning curve.</p>
+          <p class="hero-lede">We make familiar games feel fresh, warm and wonderfully easy to return to. Meet our Solitaire games—classic cards, thoughtful twists, no learning curve.</p>
           <div class="actions">
             <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">
               <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20.5v-17c0-.6.3-1.1.8-1.4L14.9 12 3.8 21.9c-.5-.3-.8-.8-.8-1.4Zm13-7.5 2.7 2.4-3.5 2-3.1-2.8L16 13Zm3.8-3.4c.8.4.8 1.5 0 2l-2.6 1.5-2.9-2.6 3.2-2.9 2.3 2ZM15.2 6.7 12.1 9.5 3.8 2.1c.4-.2.9-.2 1.3 0l10.1 4.6Z"/></svg>
               Get it on Google Play
+            </a>
+            <a class="button button-secondary" href="https://apps.apple.com/us/app/solitaire-classic-calm/id6808111593" target="_blank" rel="noopener">
+              <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.1 12.5c0-2.5 2-3.8 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.9c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.5 1.3-.1 1.8-.8 3.4-.8 1.6 0 2.1.8 3.4.8 1.4 0 2.3-1.2 3.2-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.8-1.1-2.9-4Zm-2.5-7.4c.7-.9 1.2-2.1 1.1-3.3-1.1.1-2.3.7-3.1 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3.1-1.5Z"/></svg>
+              Download on the App Store
             </a>
             <a class="button button-secondary" href="#game">See what’s inside</a>
           </div>
@@ -400,9 +441,39 @@
         <div class="trust-item"><strong>My Solitaire</strong><span>Our newest card game</span></div>
         <div class="trust-item"><strong>Daily play</strong><span>A fresh challenge every day</span></div>
         <div class="trust-item"><strong>Made yours</strong><span>Cards, tables and themes</span></div>
-        <div class="trust-item"><strong>Free</strong><span>Available now on Android</span></div>
+        <div class="trust-item"><strong>iOS + Android</strong><span>Available now on App Store and Google Play</span></div>
       </div>
     </div>
+
+    <section id="download" class="products" aria-labelledby="products-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Available now</p>
+            <h2 id="products-title">Choose your calm card table.</h2>
+          </div>
+          <p>Misiona solitaire games are now live across iOS and Android, ready for a quiet hand whenever you are.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/app-icon.webp" alt="My Solitaire app icon" width="512" height="512" loading="lazy">
+            <div>
+              <h3>My Solitaire</h3>
+              <p>Classic solitaire with daily play, themes, hints and Joker moves for Android.</p>
+              <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">Get it on Google Play ↗</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <img src="assets/app-icon-ios.jpg" alt="Solitaire Classic Calm app icon" width="512" height="512" loading="lazy">
+            <div>
+              <h3>Solitaire: Classic &amp; Calm</h3>
+              <p>A clean, relaxing solitaire experience for iPhone and iPad, now live on the App Store.</p>
+              <a class="button button-secondary" href="https://apps.apple.com/us/app/solitaire-classic-calm/id6808111593" target="_blank" rel="noopener">Download on App Store ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section id="game">
       <div class="wrap">
@@ -473,8 +544,11 @@
       <div class="wrap cta-box">
         <p class="eyebrow">One more hand?</p>
         <h2>Your next quiet moment is ready.</h2>
-        <p>My Solitaire is free to play on Android.</p>
-        <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">Play My Solitaire ↗</a>
+        <p>Play Misiona solitaire games on iOS and Android.</p>
+        <div class="actions" style="justify-content: center;">
+          <a class="button button-primary" href="https://apps.apple.com/us/app/solitaire-classic-calm/id6808111593" target="_blank" rel="noopener">Download on App Store ↗</a>
+          <a class="button button-secondary" href="https://play.google.com/store/apps/details?id=com.misiona.mysolitaire" target="_blank" rel="noopener">Get it on Google Play ↗</a>
+        </div>
       </div>
     </section>
   </main>
